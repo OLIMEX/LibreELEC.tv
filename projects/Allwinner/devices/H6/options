@@ -31,5 +31,8 @@
   # additional drivers to install:
     ADDITIONAL_DRIVERS="$ADDITIONAL_DRIVERS gpu-sunxi-midgard"
 
+  # OpenGL-ES implementation to use
+    OPENGLES="libmali"
+
   # Mali GPU family
     MALI_FAMILY="t720"

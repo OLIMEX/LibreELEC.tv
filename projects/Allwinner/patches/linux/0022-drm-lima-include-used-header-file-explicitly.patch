@@ -1,0 +1,32 @@
+From 80bb8d983224337b713a93babfffedb376031034 Mon Sep 17 00:00:00 2001
+From: Qiang Yu <yuq825@gmail.com>
+Date: Tue, 9 Apr 2019 08:36:17 +0800
+Subject: [PATCH] drm/lima: include used header file explicitly
+
+To prevent build fail on some platform which does
+not have it in the include file chain.
+
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+Suggested-by: Randy Dunlap <rdunlap@infradead.org>
+Fixes: a1d2a6339961 ("drm/lima: driver for ARM Mali4xx GPUs")
+Signed-off-by: Qiang Yu <yuq825@gmail.com>
+Link: https://patchwork.freedesktop.org/patch/msgid/20190409003617.4470-2-yuq825@gmail.com
+---
+ drivers/gpu/drm/lima/lima_gem.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/gpu/drm/lima/lima_gem.c b/drivers/gpu/drm/lima/lima_gem.c
+index 2d3cf96f6c58..1d69498bc17e 100644
+--- a/drivers/gpu/drm/lima/lima_gem.c
++++ b/drivers/gpu/drm/lima/lima_gem.c
+@@ -1,6 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0 OR MIT
+ /* Copyright 2017-2019 Qiang Yu <yuq825@gmail.com> */
+ 
++#include <linux/mm.h>
+ #include <linux/sync_file.h>
+ #include <linux/pfn_t.h>
+ 
+-- 
+2.21.0
+
