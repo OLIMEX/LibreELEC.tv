@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# SPDX-License-Identifier: GPL-2.0
+# Copyright (C) 2019-present Team LibreELEC (https://libreelec.tv)
+
+AWK_PROG='
+/^hci[0-9]*:/ { interface = substr($1, 0, length($1) - 1) }
+/^[[:space:]]*missing options: public-address[[:space:]]?$/ { print interface }
+'
+
+for INTERFACE in $(btmgmt config | awk -e "${AWK_PROG}"); do
+  MAC_FILE="/storage/.config/btmac-$INTERFACE.txt"
+  MAC_ADDR=""
+
+  # load and validate mac address, if exists
+  if [ -f "$MAC_FILE" ]; then
+    MAC_ADDR=$(grep -E "^([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}$" $MAC_FILE)
+  fi
+
+  # if mac is not valid or file doesn't exist, generate a random one and save it
+  if [ -z "$MAC_ADDR" ]; then
+    MAC_ADDR=$(od -An -N6 -t xC /dev/urandom | cut -c2- | sed -e 's/ /:/g')
+    echo "$MAC_ADDR" > "$MAC_FILE"
+  fi
+
+  btmgmt --index ${INTERFACE:3} public-addr $MAC_ADDR
+done

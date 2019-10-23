@@ -63,10 +63,15 @@ post_makeinstall_target() {
 
   # bluez looks in /etc/firmware/
     ln -sf /usr/lib/firmware $INSTALL/etc/firmware
+
+  # following programs are needed to set MAC address on some devices
+    cp -P tools/btmgmt $INSTALL/usr/bin
+    cp $PKG_DIR/scripts/setbtmac $INSTALL/usr/bin/
 }
 
 post_install() {
   enable_service bluetooth-defaults.service
   enable_service bluetooth.service
   enable_service obex.service
+  enable_service bluetooth-mac.service
 }

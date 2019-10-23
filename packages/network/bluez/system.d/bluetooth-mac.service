@@ -1,0 +1,12 @@
+[Unit]
+Description=Bluetooth MAC configuration
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/setbtmac
+StandardInput=tty
+TTYPath=/dev/tty1
+
+[Install]
+WantedBy=bluetooth.target
