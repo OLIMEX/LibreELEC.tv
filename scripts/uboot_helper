@@ -11,7 +11,7 @@ devices = {
   'Allwinner' : {
     'A20' : {
       'lime': { 'dtb': 'sun7i-a20-olinuxino-lime.dtb', 'config': 'A20-OLinuXino-Lime_defconfig' },
-      'lime2': { 'dtb': 'sun7i-a20-olinuxino-lime2.dtb', 'config': 'A20-OLinuXino-Lime2_defconfig' },
+      'lime2': { 'dtb': 'sun7i-a20-olinuxino-lime2.dtb', 'config': 'A20-OLinuXino_defconfig' },
       'mk808c': { 'dtb': 'sun7i-a20-mk808c.dtb', 'config': 'MK808C_defconfig' },
       'cubieboard2': { 'dtb': 'sun7i-a20-cubieboard2.dtb', 'config': 'Cubieboard2_defconfig' },
       'cubietruck': { 'dtb': 'sun7i-a20-cubietruck.dtb', 'config': 'Cubietruck_defconfig' },
@@ -22,6 +22,7 @@ devices = {
       'pine64_plus' : { 'dtb' : 'sun50i-a64-pine64-plus.dtb', 'config' : 'pine64_plus_defconfig' },
       'pine64_lts' : { 'dtb' : 'sun50i-a64-pine64-lts.dtb', 'config' : 'pine64-lts_defconfig' },
       'orangepi_win' : { 'dtb' : 'sun50i-a64-orangepi-win.dtb', 'config' : 'orangepi_win_defconfig' },
+      'a64_olinuxino' : { 'dtb' : 'sun50i-a64-olinuxino.dtb', 'config' : 'a64-olinuxino_defconfig' },
     },
     'H3' : {
       'bananapi_m2p' : { 'dtb' : 'sun8i-h3-bananapi-m2-plus.dtb', 'config' : 'bananapi_m2_plus_h3_defconfig' },

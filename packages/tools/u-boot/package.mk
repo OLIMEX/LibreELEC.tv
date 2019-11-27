@@ -32,7 +32,12 @@ case "$PROJECT" in
     PKG_DEPENDS_TARGET+=" rkbin"
     PKG_NEED_UNPACK+=" $(get_pkg_directory rkbin)"
     ;;
-  *)
+   Allwinner)
+    PKG_VERSION="Libre2"
+    PKG_SHA256="e8d932dbabc43f089d8dead11fd810ef4a924009f9b1a69b73fabd8fef2916ff"
+    PKG_URL="https://github.com/hehopmajieh/u-boot/archive/Libre2.tar.gz"
+    ;;
+   *)
     PKG_VERSION="2019.04"
     PKG_SHA256="76b7772d156b3ddd7644c8a1736081e55b78828537ff714065d21dbade229bef"
     PKG_URL="http://ftp.denx.de/pub/u-boot/u-boot-$PKG_VERSION.tar.bz2"
