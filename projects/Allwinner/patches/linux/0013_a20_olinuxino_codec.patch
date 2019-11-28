@@ -1,0 +1,30 @@
+diff --git a/arch/arm/boot/dts/sun7i-a20-olinuxino-lime.dts b/arch/arm/boot/dts/sun7i-a20-olinuxino-lime.dts
+index 5e411194b..b324b3c03 100644
+--- a/arch/arm/boot/dts/sun7i-a20-olinuxino-lime.dts
++++ b/arch/arm/boot/dts/sun7i-a20-olinuxino-lime.dts
+@@ -91,6 +91,10 @@
+ 	status = "okay";
+ };
+ 
++&codec {
++        status = "okay";
++};
++
+ &de {
+ 	status = "okay";
+ };
+diff --git a/arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts b/arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts
+index 4e1c590eb..89b8cd8db 100644
+--- a/arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts
++++ b/arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts
+@@ -96,6 +96,10 @@
+ 	status = "okay";
+ };
+ 
++&codec {
++        status = "okay";
++};
++
+ &de {
+ 	status = "okay";
+ };
