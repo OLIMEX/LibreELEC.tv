@@ -7,9 +7,16 @@ This repo is based on Jernej Škrabec work https://github.com/jernejsk
 # cd LibreELEC.tv
 ```
 2. Build sources
+
+A20-OLinuXino-Lime2	
 ```bash
 #PROJECT=Allwinner DEVICE=A20 ARCH=arm UBOOT_SYSTEM=lime2 make image
 ```
+A20-OLinuXino-Micro
+```bash
+#PROJECT=Allwinner DEVICE=A20 ARCH=arm UBOOT_SYSTEM=micro make image
+```
+
 3. Write Image to SD-Card
 ```bash
 #cd target
